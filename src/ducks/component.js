@@ -34,7 +34,6 @@ export const fetchComponentEpic = (action$, store) =>
     .switchMap( action =>
       ajax({url: 'http://localhost/storage-api/public/component/' + action.payload.id})
         .map( result => {
-          console.log(result)
           return fetchComponentFulfilled(result.response)
         })
     )

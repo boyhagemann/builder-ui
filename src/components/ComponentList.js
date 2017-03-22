@@ -1,14 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import ButtonLink from './ButtonLink'
+import Row from './Row'
+import CenteredContainer from './CenteredContainer'
+import { pathToComponent, pathToNodeContent } from '../helpers'
+
+const renderComponentRow = component => (
+  <Row
+    key={component._id}
+    heading={component.label}
+    to={pathToComponent(component._id)}
+    description={ component.uses.join(', ') }
+    actions={(
+      <ButtonLink to={pathToNodeContent(component._id)} label="Content" size="small" />
+    )} />
+)
 
 export default ({components}) => (
-  <div>
-  <h3>Components</h3>
-  { components.map( component =>
-    <div key={component._id}>
-    <Link to={ "/components/" + component._id }>{ component.label }</Link>
-    <p>{ component.uses.join(', ') }</p>
-    </div>
-   )}
-  </div>
+  <CenteredContainer>
+    <h3>Components</h3>
+    { components.map(renderComponentRow) }
+  </CenteredContainer>
 )
