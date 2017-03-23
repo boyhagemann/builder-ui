@@ -1,8 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 import ButtonLink from './ButtonLink'
 import Row from './Row'
 import CenteredContainer from './CenteredContainer'
+import Heading from '../components/Heading'
 import { pathToComponent, pathToNodeContent } from '../helpers'
+
+const Content = styled.div`
+  padding: ${ props => props.theme.spacing.default }px;
+`
 
 const renderComponentRow = component => (
   <Row
@@ -17,7 +23,9 @@ const renderComponentRow = component => (
 
 export default ({components}) => (
   <CenteredContainer>
-    <h3>Components</h3>
-    { components.map(renderComponentRow) }
+    <Content>
+      <Heading>Components</Heading>
+      { components.map(renderComponentRow) }
+    </Content>
   </CenteredContainer>
 )

@@ -1,5 +1,4 @@
-
-
+import { connect } from 'react-redux'
 
 export const findNodes = (nodes = [], edges = [], parent, thru) => {
   return edges
@@ -36,7 +35,8 @@ export const edgePath = (nodes = [], edges = [], nodeId, path = []) => {
 export const pathToNodeContent = (component, node, field = null) => "/components/" + component + "/nodes/" + node + (field ? "/" + field : "")
 export const pathToNodeProperties = (component, node) => "/components/" + component + "/nodes/" + node
 export const pathToComponent = (component) => "/components/" + component
-export const pathToComponentField = (component, field) => "/components/" + component + "/fields/" + field
+export const pathToFields = (component) => "/components/" + component + "/fields"
+export const pathToFieldProperties = (component, field) => "/components/" + component + "/fields/" + field
 
 
 export const findValue = (nodes, edges, node, field) => {
