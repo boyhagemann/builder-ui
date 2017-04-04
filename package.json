@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "color": "^1.0.3",
+    "immutable": "^3.8.1",
+    "querystring": "^0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3",
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "next",
@@ -14,15 +17,23 @@
     "redux-observable": "^0.14.1",
     "remote-redux-devtools": "^0.5.7",
     "rxjs": "^5.2.0",
-    "styled-components": "^1.4.4"
+    "styled-components": "^1.4.4",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addon-options": "^1.0.2",
+    "@kadira/storybook-addons": "^1.6.1",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   }
 }
